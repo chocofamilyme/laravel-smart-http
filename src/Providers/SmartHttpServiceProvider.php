@@ -3,6 +3,8 @@
 namespace Chocofamily\Laravel\SmartHttp\Providers;
 
 use Chocofamily\Laravel\SmartHttp\Client;
+use Chocofamily\Laravel\SmartHttp\Facades\SmartClient;
+use Chocofamily\Laravel\SmartHttp\Facades\SmartRequest;
 use Chocofamily\Laravel\SmartHttp\Http\Request;
 use Illuminate\Contracts\Container\BindingResolutionException;
 use Illuminate\Support\ServiceProvider;
@@ -40,17 +42,19 @@ class SmartHttpServiceProvider extends ServiceProvider
             __DIR__.'/../../config/smarthttp.php' => config_path('smarthttp.php'),
         ]);
 
-        $this->app->make(Client::class, [
-            config('smarthttp', []),
-            $this->app->get('cache'),
-        ]);
+        $this->app->bind(Client::class,
+            function () {
+                return new Client(config('smarthttp', []), $this->app->get('cache'));
+            }
+        );
 
-        $this->app->make(Request::class, [
-            config('smarthttp', []),
-            $this->app->get('cache'),
-        ]);
+        $this->app->bind(Request::class,
+            function () {
+                return new Request(config('smarthttp', []), $this->app->get('cache'));
+            }
+        );
 
-        $this->app->alias('SmartHttpClient', Client::class);
-        $this->app->alias('SmartHttpRequest', Request::class);
+        $this->app->alias('SmartClient', SmartClient::class);
+        $this->app->alias('SmartRequest', SmartRequest::class);
     }
 }

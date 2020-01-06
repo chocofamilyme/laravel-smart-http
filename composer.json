@@ -19,12 +19,19 @@
   ],
   "require": {
     "php": ">= 7.2.0",
-    "chocofamilyme/smart-http": "dev-CT-1643",
+    "chocofamilyme/smart-http": "^1.0",
     "laravel/framework": "^6.0"
   },
   "autoload": {
     "psr-4": {
       "Chocofamily\\Laravel\\SmartHttp\\": "src/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Chocofamily\\Laravel\\SmartHttp\\Providers\\SmartHttpServiceProvider"
+      ]
     }
   },
   "scripts": {

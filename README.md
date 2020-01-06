@@ -24,7 +24,17 @@ php artisan vendor:publish --provider="Chocofamily\Laravel\SmartHttp\Providers\S
 ### Использование
 
 ```php
-app('SmartHttpRequest')->send('POST', '/resource', [
+app('SmartRequest')->send('POST', '/resource', [
+    'json' => [
+        'name' => 'test'
+    ]   
+]);
+```
+
+Или используя фасады:
+
+```php
+SmartRequest::send('POST', '/resource', [
     'json' => [
         'name' => 'test'
     ]   

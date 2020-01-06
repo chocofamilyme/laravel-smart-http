@@ -25,7 +25,7 @@ class SmartHttpServiceProvider extends ServiceProvider
     {
         // Merge our config with application config
         $this->mergeConfigFrom(
-            __DIR__.'/../../config/smart-http.php', 'smart-http'
+            __DIR__.'/../../config/smarthttp.php', 'smarthttp'
         );
     }
 

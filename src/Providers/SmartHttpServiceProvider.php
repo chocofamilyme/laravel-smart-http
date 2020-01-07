@@ -2,10 +2,10 @@
 
 namespace Chocofamily\Laravel\SmartHttp\Providers;
 
-use Chocofamily\Laravel\SmartHttp\Client;
 use Chocofamily\Laravel\SmartHttp\Facades\SmartClient;
 use Chocofamily\Laravel\SmartHttp\Facades\SmartRequest;
-use Chocofamily\Laravel\SmartHttp\Http\Request;
+use Chocofamily\SmartHttp\Client;
+use Chocofamily\SmartHttp\Http\Request;
 use Illuminate\Contracts\Container\BindingResolutionException;
 use Illuminate\Support\ServiceProvider;
 

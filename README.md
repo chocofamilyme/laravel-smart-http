@@ -4,7 +4,7 @@
 ### Требования
 - PHP 7.2+
 - chocofamilyme/smart-http ^1.0
-- laravel ^6.0
+- laravel ^7.3
 
 ### Установка
 ```bash

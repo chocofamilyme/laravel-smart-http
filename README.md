@@ -2,9 +2,9 @@
 На основе библиотеки [Smart-Http](https://github.com/chocofamilyme/smart-http)
 
 ### Требования
-- PHP 7.2+
+- PHP 7.4+
 - chocofamilyme/smart-http ^1.0
-- laravel ^7.3
+- laravel ^8.2
 
 ### Установка
 ```bash
